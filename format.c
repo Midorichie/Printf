@@ -40,3 +40,24 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (total);
 }
+
+/**
+ * _printstr - Print a string
+ * @str: String to print
+ *
+ * Return: Number of characters printed,
+ * excluding null bytes
+ */
+int _printstr(char *str)
+{
+	int total = 0;
+
+	if (!str)
+		str = "(null)";
+	while (*str)
+	{
+		total += putchar(*str);
+		str++;
+	}
+	return (total);
+}
