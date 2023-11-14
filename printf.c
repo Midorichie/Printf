@@ -8,34 +8,21 @@
  */
 int _printf(const char *format, ...)
 {
-	match m[] = {
-		{"%c", printf_char}, {"%s", printf_string}, {"%%", print_37}
-	};
-
+	int count = 0;
 	va_list args;
-	int i = 0, len = 0;
-	int n;
 
-	va_start(args, format);
-	if (format == NULL ||	(format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
 
-	while (format[i] != '\0')
+	va_start(args, format);
+
+	while (*format)
 	{
-		n = 2;
-		while (n >= 0)
+		if (*format != '%')
 		{
-			if (m[n]. id[0] == format[i] && m[n].id[1] == format[i + 1])
-			{
-				len = len + m[n].f(args);
-				i = i + 2;
-			}
-			n--;
+			write(1, format, 1);
 		}
-		_putchar(format[i]);
-		i++;
-		len++;
+		format++;
 	}
-	va_end(args);
-	return (len);
+	return (count);
 }
