@@ -4,13 +4,13 @@
  * @arg: Argument
  * Return: The length of the string
  */
-int printf_string(va_list arg)
+int printf_string(va_list val)
 {
 	char *str;
 	int a;
 	int length;
 
-	str = va_arg(arg, char *);
+	str = va_arg(val, char *);
 	if (str == NULL)
 	{
 		str = "(null)";
