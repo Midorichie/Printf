@@ -1,12 +1,10 @@
 #include "main.h"
-#define BUFF_SIZE 1024
-
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - customized printf function
  * @format: Format str
- * Return: Char numbers
+ * Return: Char prints
  */
 
 int _printf(const char *format, ...)

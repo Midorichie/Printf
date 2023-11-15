@@ -1,8 +1,5 @@
 /***************CHARACTER*************************/
-#include "common.h"
-#include "flags.h"
 #include "main.h"
-#define BUFF_SIZE 256
 /**
  * print_char - prints a single character
  * @types: List of arguments
@@ -25,9 +22,9 @@ int print_char(va_list types, char buffer[],
 
 /**
  * print_string - Prints out a string
- * @types: List of Arguments
+ * @types: Arrangement of Arguments
  * @buffer: Buffer array of printing
- * @flags: Flags for formatting
+ * @flags: Calculate active flags for formatting
  * @width: For width
  * @precision: For precision
  * @size: For size
@@ -85,7 +82,7 @@ int print_string(va_list types, char buffer[],
  * @flags: Flags for formating
  * @width: For width
  * @precision: For precision
- * @size: For size
+ * @size: For size specifier
  * Return: Number of characters printed
  */
 
@@ -110,7 +107,7 @@ int print_percent(va_list types, char buffer[],
  * @width: For width
  * @precision: For precision
  * @size: For size
- * Return: Number of characters
+ * Return: Number of characters to be printed
  */
 
 int print_int(va_list types, char buffer[], int flags,
