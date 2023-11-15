@@ -3,13 +3,13 @@
 /**
  * get_flag - Calculates active flags available
  * @format: Formatted string in which to print the args
- * @i: take a parameter.
+ * @a: take a parameter.
  *
  * Return: Flag
  * AUTHOR - Hammed Yakub and Kolawole Tella
  */
 
-int get_flag(const char *format, int *i)
+int get_flag(const char *format, int *a)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
