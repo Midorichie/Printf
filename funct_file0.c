@@ -74,15 +74,16 @@ int print_string(va_list types, char buffer[],
 	return (write(1, str, length));
 }
 
-/*************************%%********************/
+/*************************%%**********************/
 /**
- * print_percent - Print percent to the output
+ * print_percent - Prints a percent sign to the output
  * @types: List of Arguments
  * @buffer: Buffer array for printing
  * @flags: Flags for formating
  * @width: For width
  * @precision: For precision
  * @size: For size specifier
+ * by Hammed Yakub and Kolawole Tella
  * Return: Number of characters printed
  */
 
