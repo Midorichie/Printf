@@ -139,7 +139,7 @@ int write_unsgnd(int is_negative, int ind, char buffer[],
 	UNUSED(is_negative);
 	UNUSED(size);
 
-	if (precision == 0 && ind == BUFF_SZIE - 2 && buffer[ind] == '0')
+	if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
 		return (0); /* printf(".0d", 0) no char is printed */
 
 	if (precision > 0 && precision < length)
@@ -215,7 +215,7 @@ int write_pointer(char buffer[], int ind, int length,
 		}
 		else if (!(flags & F_MINUS) && padd == '0')
 		{
-			if (extra_)
+			if (extra_c)
 				buffer[--padd_start] = extra_c;
 			buffer[1] = '0';
 			buffer[2] = 'x';

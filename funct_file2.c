@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * print_pointer - Prints the value of a ptr var
  * @types: Arg list
@@ -25,19 +24,17 @@ int print_pointer(va_list types, char buffer[],
 	void *addrs = va_arg(types, void *);
 
 	UNUSED(width);
-
 	UNUSED(size);
 
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
+	buffer[BUFF_SIZE - 1] = '\0';
+	UNUSED(precision);
 
-		buffer[BUFF_SIZE - 1] = '\0';
-		UNUSED(precision);
+	num_addrs = (unsigned long)addrs;
 
-		num_addrs = (unsigned long)addrs;
-
-		while (num_addrs > 0)
-		{
+	while (num_addrs > 0)
+	{
 		buffer[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		len++;
@@ -83,7 +80,7 @@ int flags, int width, int precision, int size)
 	if (str == NULL)
 		return (write(1, "(null)", 6));
 
-	while (str[i] != '\0')
+	while (str[a] != '\0')
 	{
 		if (is_printable(str[a]))
 			buffer[a + offset] = str[a];
